@@ -19,8 +19,9 @@ DIR=$(dirname $0)
 mkdir -p "$DIR/cache"
 
 # Get Kaseya username
-username=`grep "User_Name" /Library/Preferences/kaseyad.ini | /usr/bin/awk '{ print $2 }'`
-
-echo "username =" "$username" >"$DIR/cache/kaseyainfo.txt"
+# Get Kaseya username
+grep "User_Name" /Library/Preferences/kaseyad.ini | /usr/bin/awk '{ print $2 }' >"$DIR/cache/kaseyainfo.txt"
 
 exit 0
+
+
